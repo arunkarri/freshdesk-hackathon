@@ -1,0 +1,138 @@
+body {
+  background-color: #eeeded;
+}
+
+.card {
+  margin: 8px;
+}
+
+.badge-outline-success {
+  background-color: #e0f5f0;
+  color: #007958;
+  border: 1px solid #b4e5d9;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  margin: 20px;
+  border-radius: 6px;
+  background-color: #cdebc4;
+  color: grey;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+}
+
+.low {
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+  background-color: #a0d76a;
+}
+
+.medium {
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+  background-color: #4da1ff;
+}
+
+.high {
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+  background-color: #ffd012;
+}
+
+.urgent {
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+  background-color: #ff5959;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.pulse {
+  height: 20px;
+  width: 20px;
+}
+.card-bottom-text {
+  font-size: 12px;
+  color: gray;
+}
+.card-bottom-text > * {
+  margin-right: 3px;
+}
+.separator {
+  display: inline-block;
+  background-color: #9e9e9e;
+  width: 4px;
+  height: 4px;
+  margin: 1px 3px;
+  border-radius: 50%;
+}
+table {
+  background-color: white;
+}
+thead {
+  background-color: #eeeded;
+}
+.edit-btn {
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.contact {
+  margin-right: 7px;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  display: inline-block;
+  background-color: #ffd8c2;
+  color: grey;
+  font-weight: 500;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+}
+
+.contact-display {
+  display: flex;
+}
+
+.contacts-margin {
+  margin: 10px;
+}
+
+.contacts-header {
+  bottom: -10px;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+.create-contact {
+  float: right;
+}
+.jumbotron {
+  padding: 2rem 1rem;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}

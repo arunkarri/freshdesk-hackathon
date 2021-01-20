@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshDesk Application</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="icon" type="image/x-icon" href="images/freshdesk.png" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar Code Start -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">
+          <img src="images/freshdesk.png" alt="" width="30" height="30" class="d-inline-block align-top" />
+          FreshDesk Application
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Tickets<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contacts.html">Contacts</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Navbar Code End -->
+
+      <div class="row" id="ticket">
+        <div class="col-12 contact-view" id="contact-view">
+          <br />
+          <div class="row contacts-margin">
+            <div class="col-6 contacts-header">
+              <h5 class="text-right">Contacts</h5>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary create-contact" data-toggle="modal" data-target="#myModal" onclick="updateType('Create')">Add Contact</button>
+            </div>
+          </div>
+
+          
+            <div class="alert alert-success alert-dismissible fade hide" role="alert" id="success-alert">
+              Contact <span id="operation"></span>d successfully!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+            </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"><span id="modal-title"></span> Contact <span class="text-danger">*</span></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <form id="contact-form">
+                    <div class="mb-3">
+                      <label for="fullName" class="form-label">Full name <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="fullName" placeholder="Enter the name of this person" />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="title" class="form-label">Job title <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="title" placeholder="Enter a job title" />
+                    </div>
+
+                    <div class="jumbotron">
+                      <small>Atleast one of these fields is mandatory <span class="text-danger">*</span></small>
+                      <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter an email address" />
+                      </div>
+                      <div class="mb-3">
+                        <label for="work-phone" class="form-label">Phone number</label>
+                        <input type="text" class="form-control" id="work-phone" placeholder="Enter a phone number" />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="twitter" class="form-label">Twitter</label>
+                        <input type="text" class="form-control" id="twitter" placeholder="Enter a Twitter ID" />
+                      </div>
+                      <div class="mb-3">
+                        <label for="uid" class="form-label">Unique external ID</label>
+                        <input type="text" class="form-control" id="uid" placeholder="Enter the contact's unique ID" />
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="company" class="form-label">Company ID</label>
+                      <input type="text" class="form-control" id="company" placeholder="Enter the contact's company ID" />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="address" class="form-label">Address <span class="text-danger">*</span></label>
+                      <textarea class="form-control" id="address" placeholder="Enter the address of this person" rows="3"></textarea>
+                    </div>
+                    <b class="text-danger" id="form-error"></b>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="reset()">Close</button>
+                  <button type="button" class="btn btn-primary" id="form-submit"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-auto">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="table-secondary">
+                    <tr>
+                      <th scope="col">Contact</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Company</th>
+                      <th scope="col">Email address</th>
+                      <th scope="col">Work phone</th>
+                      <th scope="col">Facebook</th>
+                      <th scope="col">Twitter</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.bundle.min.js"></script>
+    <script src="scripts/dom.js"></script>
+    <script src="scripts/contact-script.js"></script>
+  </body>
+</html>
